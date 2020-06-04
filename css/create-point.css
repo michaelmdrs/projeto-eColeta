@@ -28,6 +28,7 @@
 form {
     background-color: white;
     border-radius: 8px;
+    box-sizing: border-box;
     margin-top: 80px;
     padding: 64px;
     max-width: 730px;
