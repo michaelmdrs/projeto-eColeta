@@ -28,6 +28,6 @@
 
 @media (max-height:760px) {
     #page-home {
-        background-position-y: 200px;
+        background-position-y: 200px; /*Os 200px aplicado é para fixar a imagem no eixo y*/
     }
 }

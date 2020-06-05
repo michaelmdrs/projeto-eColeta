@@ -29,6 +29,58 @@
 
             <form action="">
                 <h1>Cadastro do ponto de coleta</h1>
+
+                <fieldset>
+                    <legend>
+                        <h2>Dados da Entidade</h2>
+                    </legend>
+
+                    <div class="field"> <!-- Cria caixas de formulários -->
+                        <label for="txtName">Nome da entidade</label>
+                        <input type="text" name="txtName">
+                    </div>
+
+                    <div class="field-group">
+
+                        <div class="field">
+                            <label for="txtAddres">Endereço</label>
+                            <input type="text" name="txtAddres">
+                        </div>
+
+                        <div class="field">
+                            <label for="txtNumero">Número</label>
+                            <input type="text" name="txtNumero">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+
+                        <div class="field">
+                            <label for="txtUf">Estado</label>
+                            <select name="" id="">
+                                <option value="">Selecione o estado</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="txtCity">Cidade</label>
+                            <select name="txtCity" disabled id="">
+                                <option value="">Selecione a cidade</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        <h2>Itens de coleta</h2>
+                    </legend>
+                </fieldset>
+
+                <button type="submit">Cadastrar ponto de coleta</button>
+
             </form>
 
     </div>
