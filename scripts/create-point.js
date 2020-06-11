@@ -17,8 +17,12 @@ populateUFs()
 
 function getCities(event) {
     const citySelect = document.querySelector('select[name=txtCity]')
+    const stateInput = document.querySelector('input[name=state]')
 
     const ufValue = event.target.value
+
+    const indexOfSelectState = event.target.selectedIndex
+    stateInput.value = event.target.options[indexOfSelectState].text
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
 
@@ -26,7 +30,7 @@ function getCities(event) {
     .then(res => res.json() )
     .then( cities => {
         for(const city of cities ) {
-            citySelect.innerHTML += `<option value='${cities.id}'>${cities.nome}</option>`
+            citySelect.innerHTML += `<option value='${city.id}'>${city.nome}</option>`
         }
 
         citySelect.disabled = false
@@ -36,4 +40,6 @@ function getCities(event) {
 
 document
     .querySelector('select[name=txtUf]')
-    .addEventListener('change', getCities) /* Ouve todo evento referente ao campo selecionado */
+    .addEventListener('change', getCities) 
+    /* Ouve todo evento referente ao campo selecionado */
+    /* O evente só atualiza o valor quando a referência da função por referência for chamada */
