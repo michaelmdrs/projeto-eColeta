@@ -23,15 +23,23 @@ function getCities(event) {
     const ufValue = event.target.value
 
     const indexOfSelectState = event.target.selectedIndex
+
     stateInput.value = event.target.options[indexOfSelectState].text
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
 
+    /* Para corrigir o problema de escolher o estado e povoar as cidades, não atualizava a lista ao inserir um estado novo 
+       A maneira de corrigir esse problema é da seguinte forma */
+
+       citySelect.innerHTML = '<option value>Selecione a cidade</option>' /* Começa com o campo vazio e ao chamar um estado faz o povoamento com as respectivas cidades  */
+       citySelect.disabled = true /* Deixa o campo bloqueado esperando o change ser modificado */
+
     fetch(url)
     .then(res => res.json() )
     .then( cities => {
+        
         for(const city of cities ) {
-            citySelect.innerHTML += `<option value='${city.id}'>${city.nome}</option>`
+            citySelect.innerHTML += `<option value='${city.nome}'>${city.nome}</option>`
         }
 
         citySelect.disabled = false
