@@ -133,3 +133,8 @@ form button:hover {
     flex: 1;
     margin-top: 12px;
 }
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+}

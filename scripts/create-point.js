@@ -52,3 +52,21 @@ document
     .addEventListener('change', getCities) 
     /* Ouve todo evento referente ao campo selecionado */
     /* O evente só atualiza o valor quando a referência da função por referência for chamada */
+
+// Itens de Coleta
+// Capturar todos os LI's
+
+const itemsToCollect = document.querySelectorAll('.items-grid li') // Capturo todo os dados do LI ligado a essa classe.
+
+for (const item of itemsToCollect) {
+    item.addEventListener('click', handleSelectedItem) // Variavel para capturar os eventos
+}
+
+function handleSelectedItem(event) { //função para retornar a ação
+    const itemLi = event.target
+
+    // add or remove one class javascript
+    itemLi.classList.toggle("selected")
+
+    const itemId = itemLi.dataset.id
+}
